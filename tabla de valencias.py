@@ -168,15 +168,19 @@ Todos
           pass
 
  if op=='T' or op=='t':
+     print('Enter para continuar')
      for p in tabla_de_valencias_metales:
-         print (p[0],'('+str(p[1])+')','Oxidación +',p[2],p[3])
-         xds=input('Enter para continuar')
+         print (p[0],'('+str(p[1])+')','Oxidación +',p[2],p[3],end="\r")
+         xds=input()
 
 
 while True:
     try:
         juego_quimica()
-    except:
+    except KeyboardInterrupt:
+        exit()
+    except Exception as e:
+        print(e)
         juego_quimica()
 
   
